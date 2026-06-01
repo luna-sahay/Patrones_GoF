@@ -38,12 +38,13 @@ def test_builder_campos():
     assert a.agent_id == "001"
 
 def test_builder_director():
-    a = DirectorAgenteEmail.crear_nuevo_agente(
-        AgenteEmailBuilder(),
+    director = DirectorAgenteEmail()
+    builder = AgenteEmailBuilder()
+    a = director.crear_nuevo_agente(
+        builder,
         "002",
         "Laura"
-    )
-
+        )
     assert a.agent_id == "002"
 
 def test_decorator_bono():

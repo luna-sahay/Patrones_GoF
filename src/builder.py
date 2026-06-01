@@ -43,15 +43,11 @@ class AgenteEmailBuilder:
 
 
 class DirectorAgenteEmail:
-
-    @staticmethod
-    def crear_nuevo_agente(builder, agent_id, manager):
-        return (
-            builder
-            .agent_id(agent_id)
-            .team_manager(manager)
-            .handle_time(0)
-            .inbound_tx(0)
-            .acw(0)
-            .build()
-        )
+    
+    def crear_nuevo_agente(self, builder, agent_id, manager):
+        builder.agent_id(agent_id)
+        builder.team_manager(manager)
+        builder.handle_time(0)
+        builder.inbound_tx(0)
+        builder.acw(0)
+        return builder.build()
